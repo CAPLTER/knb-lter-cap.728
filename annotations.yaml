@@ -1,0 +1,18 @@
+- name: DEG_C
+  valueLabel: degree Celsius
+  valueURI: http://qudt.org/vocab/unit/DEG_C
+  references: b63c7869466f6c72b7012757d6220ca5.raster_value
+  propertyLabel: has unit
+  propertyURI: http://qudt.org/schema/qudt/hasUnit
+- name: DEG_C
+  valueLabel: degree Celsius
+  valueURI: http://qudt.org/vocab/unit/DEG_C
+  references: 9d60868a441805f47854c21f101887ae.raster_value
+  propertyLabel: has unit
+  propertyURI: http://qudt.org/schema/qudt/hasUnit
+- name: DEG_C
+  valueLabel: degree Celsius
+  valueURI: http://qudt.org/vocab/unit/DEG_C
+  references: debca10927c88a6288ba5ccba0bd0bfb.raster_value
+  propertyLabel: has unit
+  propertyURI: http://qudt.org/schema/qudt/hasUnit

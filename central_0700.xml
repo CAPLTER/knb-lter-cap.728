@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="1373ddd8-4afb-4fd1-a441-1cec19e3dd33" system="uuid" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
+  <additionalInfo>
+    <section>
+      <title>user-provided coordinate reference system</title>
+      <para>3857</para>
+    </section>
+    <section>
+      <title>raster-derived projection</title>
+      <para>+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs</para>
+    </section>
+  </additionalInfo>
+  <attributeList>
+    <attribute id="b63c7869466f6c72b7012757d6220ca5.raster_value">
+      <attributeName>raster_value</attributeName>
+      <attributeDefinition>Mean Radiant Temperature</attributeDefinition>
+      <storageType>float</storageType>
+      <measurementScale>
+        <ratio>
+          <unit>
+            <customUnit>DEG_C</customUnit>
+          </unit>
+          <numericDomain>
+            <numberType>real</numberType>
+          </numericDomain>
+        </ratio>
+      </measurementScale>
+    </attribute>
+  </attributeList>
+  <cellGeometry>pixel</cellGeometry>
+  <cellSizeXDirection>1</cellSizeXDirection>
+  <cellSizeYDirection>1</cellSizeYDirection>
+  <columns>105700</columns>
+  <entityDescription>Hourly Mean Radiant Temperature Distribution on a summer day (2024-06-06), Maricopa County, Arizona (USA): central region at 0700</entityDescription>
+  <entityName>mcp_2023-07-19_0700_central.tif</entityName>
+  <horizontalAccuracy>
+    <accuracyReport>METADATA_NOT_PROVIDED</accuracyReport>
+  </horizontalAccuracy>
+  <numberOfBands>1</numberOfBands>
+  <physical>
+    <objectName>mcp_2023-07-19_0700_central.tif</objectName>
+    <size unit="byte">136641386241</size>
+    <authentication method="MD5">b63c7869466f6c72b7012757d6220ca5</authentication>
+    <dataFormat>
+      <externallyDefinedFormat>
+        <formatName>tif</formatName>
+      </externallyDefinedFormat>
+    </dataFormat>
+    <distribution>
+      <online>
+        <url>https://gios-data.s3.us-west-2.amazonaws.com/datasets/cap/mcp_2023-07-19_0700_central.tif</url>
+      </online>
+    </distribution>
+  </physical>
+  <rasterOrigin>Upper Left</rasterOrigin>
+  <rows>88506</rows>
+  <spatialReference>
+    <horizCoordSysName>Sphere_Mercator</horizCoordSysName>
+  </spatialReference>
+  <verticalAccuracy>
+    <accuracyReport>METADATA_NOT_PROVIDED</accuracyReport>
+  </verticalAccuracy>
+  <verticals>1</verticals>
+</eml:eml>

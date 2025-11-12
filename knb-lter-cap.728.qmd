@@ -1,0 +1,244 @@
+---
+title: "capeml template"
+author: "information manager"
+date: Sys.Date()
+---
+
+```{r}
+#| eval: TRUE
+#| label: metadata
+
+this_path <- "metadata_mrt_2023.xlsx"
+
+readxl::read_excel(
+  path  = this_path,
+  sheet = "attributes"
+) |>
+  readr::write_csv("attributes.csv")
+
+readxl::read_excel(
+  path  = this_path,
+  sheet = "attribute_codes"
+) |>
+  readr::write_csv("attribute_codes.csv")
+
+readxl::read_excel(
+  path  = this_path,
+  sheet = "dataset"
+) |>
+  readr::write_csv("dataset.csv")
+
+readxl::read_excel(
+  path  = this_path,
+  sheet = "data_entities"
+) |>
+  readr::write_csv("data_entities.csv")
+```
+
+
+```{r}
+#| eval: TRUE
+#| label: rasters
+
+# devtools::load_all("~/localRepos/capeml/")
+devtools::load_all("~/localRepos/capemlGIS/")
+source("~/Documents/localSettings/aws.s3")
+sub_path <- "~/Desktop/shade/"
+
+# list_of_rasters <- c(
+# glue::glue(sub_path, "mcp_2023-07-19_0700_central.tif")
+# glue::glue(sub_path, "mcp_2023-07-19_0800_central.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_0900_central.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1000_central.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1100_central.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1200_central.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1300_central.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1400_central.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1500_central.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1600_central.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1700_central.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1800_central.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1900_central.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_2000_central.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_0700_east.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_0800_east.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_0900_east.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1000_east.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1100_east.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1200_east.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1300_east.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1400_east.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1500_east.tif")
+# glue::glue(sub_path, "mcp_2023-07-19_1600_east.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1700_east.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1800_east.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1900_east.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_2000_east.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_0700_west.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_0800_west.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_0900_west.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1000_west.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1100_west.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1200_west.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1300_west.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1400_west.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1500_west.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1600_west.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1700_west.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1800_west.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_1900_west.tif"),
+# glue::glue(sub_path, "mcp_2023-07-19_2000_west.tif")
+# )
+
+process_raster <- function(filename) {
+
+  fileBasename <- basename(tools::file_path_sans_ext(filename))
+  hour         <- stringr::str_split(fileBasename, "_")[[1]][[3]]
+  region       <- stringr::str_split(fileBasename, "_")[[1]][[4]]
+  # region <- stringr::str_extract(stringr::str_split("mcp_2024-06-06_0700_west.tif", "_")[[1]][[4]], "^[A-z]+")
+
+  rasterDesc <- glue::glue(
+    "Hourly Mean Radiant Temperature Distribution on a summer day (2024-06-06), Maricopa County, Arizona (USA): {region} region at {hour}"
+  )
+
+  eml_raster <- capemlGIS::create_raster(
+    raster_file              = filename,
+    description              = rasterDesc,
+    epsg                     = 3857,
+    raster_value_description = "Mean Radiant Temperature",
+    raster_value_units       = "DEG_C",
+    geographic_description   = "central Arizona, USA",
+    project_naming           = FALSE
+  )
+
+  assign(
+    # x     = paste0(fileBasename, "_SR"),
+    x     = paste0(region, "_", hour, "_SR"),
+    value = eml_raster,
+    envir = .GlobalEnv
+  )
+
+  EML::write_eml(
+    eml  = get(paste0(region, "_", hour, "_SR")),
+    file = paste0(region, "_", hour, ".xml")
+  )
+
+  capeml::data_to_amz(filename)
+
+}
+
+list_of_rasters <- list.files(
+  path       = sub_path,
+  pattern    = "\\.tif$",
+  full.names = TRUE
+)
+
+purrr::walk(list_of_rasters, process_raster)
+
+## just one:
+# process_raster(glue::glue(sub_path, "mcp_2023-07-19_0800_central.tif"))
+
+```
+
+
+```{r}
+#| eval: TRUE
+#| label: personnel
+
+personnel <- readxl::read_excel(
+  path  = this_path,
+  sheet = "personnel"
+) |>
+  dplyr::mutate(
+    data_source  = "~/Dropbox/floating/cap_authors.csv",
+    project_role = dplyr::case_when(
+      role == "associatedParty" ~ "some_project_role",
+      TRUE ~ NA_character_
+    )
+  ) |>
+  dplyr::select(
+    last_name,
+    first_name,
+    role_type = role,
+    project_role,
+    email,
+    orcid = ORCiD,
+    data_source
+  )
+
+# Convert to a list of lists
+personnel_list <- purrr::transpose(personnel)
+
+# write to people.yaml (edit as needed)
+yaml::write_yaml(
+  x    = personnel_list,
+  file = "people.yaml"
+)
+```
+
+
+```{r}
+#| eval: TRUE
+#| label: keywords
+
+(
+  readxl::read_excel(
+  path    = this_path,
+    sheet = "keywords"
+  ) |>
+    readr::write_csv("/tmp/keywords.csv")
+)
+```
+
+
+```{r}
+#| eval: TRUE
+#| label: coverages
+
+dataset <- readxl::read_excel(
+  path  = this_path,
+  sheet = "dataset"
+)
+
+coverage <- EML::set_coverage(
+  begin                 = "2023-07-19",
+  end                   = "2023-07-19",
+  geographicDescription = capeml::read_package_configuration()[["geographic_description"]],
+  west                  = dataset[dataset$metadata_field == "west",  ]$metadata,
+  east                  = dataset[dataset$metadata_field == "east",  ]$metadata,
+  north                 = dataset[dataset$metadata_field == "north", ]$metadata,
+  south                 = dataset[dataset$metadata_field == "south", ]$metadata
+)
+```
+
+
+```{r}
+#| eval: TRUE
+#| label: build
+
+# devtools::load_all("~/localRepos/capeml")
+
+dataset <- capeml::create_dataset()
+eml     <- capeml::create_eml()
+
+EML::eml_validate(eml)
+capeml::write_cap_eml()
+
+source("~/Documents/localSettings/aws.s3")
+
+lapply(
+  X   = list.files(pattern = ""),
+  FUN = capeml::data_to_amz
+)
+
+source("~/Documents/localSettings/edi.R")
+capeml::get_package_evaluation(full_report = FALSE)
+
+# report <- capeml::get_package_evaluation(full_report = TRUE)
+# xml2::write_xml(report, "/tmp/report.xml")
+
+capeml::create_package(environment = "staging")
+
+EDIutils::logout()
+```
+

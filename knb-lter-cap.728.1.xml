@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="knb-lter-cap.728.1" scope="system" system="knb" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
+  <access authSystem="knb" order="allowFirst" scope="document">
+    <allow>
+      <principal>uid=CAP,o=EDI,dc=edirepository,dc=org</principal>
+      <permission>all</permission>
+    </allow>
+    <allow>
+      <principal>public</principal>
+      <permission>read</permission>
+    </allow>
+  </access>
+  <dataset>
+    <title>Hourly Mean Radiant Temperature Distribution on a summer day (2023-07-19) Maricopa County, Arizona (USA)</title>
+    <creator>
+      <individualName>
+        <givenName>Isaac</givenName>
+        <surName>Buo</surName>
+      </individualName>
+      <organizationName>Arizona State University</organizationName>
+      <electronicMailAddress>isaac.buo@ut.ee</electronicMailAddress>
+      <userId directory="https://orcid.org">0000-0002-6211-4957</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Waqar</givenName>
+        <givenName>H</givenName>
+        <surName>Khan</surName>
+      </individualName>
+      <organizationName>Arizona State University</organizationName>
+      <electronicMailAddress>wkhan17@asu.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">0000-0003-0785-2508</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Protik</givenName>
+        <givenName>B</givenName>
+        <surName>Pranto</surName>
+      </individualName>
+      <organizationName>Arizona State University</organizationName>
+      <electronicMailAddress>ppranto@asu.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">0009-0009-7746-6312</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Ariane</givenName>
+        <surName>Middel</surName>
+      </individualName>
+      <organizationName>Arizona State University</organizationName>
+      <electronicMailAddress>Ariane.Middel@asu.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">0000-0002-1565-095X</userId>
+    </creator>
+    <metadataProvider>
+      <individualName>
+        <givenName>Isaac</givenName>
+        <surName>Buo</surName>
+      </individualName>
+      <organizationName>Arizona State University</organizationName>
+      <electronicMailAddress>isaac.buo@ut.ee</electronicMailAddress>
+      <userId directory="https://orcid.org">0000-0002-6211-4957</userId>
+    </metadataProvider>
+    <pubDate>2025-10-30</pubDate>
+    <language>english</language>
+    <abstract>
+      <markdown>
+This dataset is a collection of 1-m resolution mean radiant temperature (Tmrt) rasters generated using digital surface models and the Solar and longwave environmental irradiance geometry (SOLWEIG) model. The dataset provides hourly Tmrt covering Maricopa County, Arizona (USA) metropolitan area for one of the hottest days in the summer of 2023 (July 19, 2023, peak air temperature of 44 degrees C) from 07:00 hrs to 20:00 hrs (Mountain Standard Time). The dataset is divided to cover these sub-spatial extents Maricopa Central (Anthem, Carefree, Cave Creek, Paradise Valley, Phoenix, Scottsdale, Tempe); Maricopa East (Chandler, Fountain Hills, Gilbert, Mesa, Queen Creek, Rio Verde, Sun Lakes); Maricopa West (Avondale, Buckeye, Citrus Park, El Mirage, Glendale, Goodyear, Litchfield Park, Peoria, Sun City, Sun City West, Surprise, Wickenburg, Youngtown). The dataset can serve as a guide for heat mitigation programs within the area and as input for heat exposure studies.
+</markdown>
+    </abstract>
+    <keywordSet>
+      <keyword keywordType="theme">urban climate and air quality</keyword>
+      <keywordThesaurus>CAP LTER IRT</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword keywordType="theme">urban</keyword>
+      <keyword keywordType="theme">temperature</keyword>
+      <keyword keywordType="theme">LiDAR</keyword>
+      <keywordThesaurus>LTER controlled vocabulary</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword keywordType="theme">land use and land cover change</keyword>
+      <keyword keywordType="theme">human-environment interactions</keyword>
+      <keywordThesaurus>LTER core areas</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword keywordType="theme">mean radiant temperature</keyword>
+      <keyword keywordType="theme">human thermal exposure</keyword>
+      <keyword keywordType="theme">solweig</keyword>
+      <keywordThesaurus>Creator Defined Keyword Set</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword keywordType="theme">cap lter</keyword>
+      <keyword keywordType="theme">cap</keyword>
+      <keyword keywordType="theme">caplter</keyword>
+      <keyword keywordType="theme">central arizona phoenix long term ecological research</keyword>
+      <keyword keywordType="place">arizona</keyword>
+      <keyword keywordType="place">az</keyword>
+      <keyword keywordType="theme">arid land</keyword>
+      <keywordThesaurus>CAPLTER Keyword Set List</keywordThesaurus>
+    </keywordSet>
+    <intellectualRights>This data package is released to the "public domain" under Creative Commons CC0 1.0 "No Rights Reserved" (see: https://creativecommons.org/publicdomain/zero/1.0/). The consumer of these data ("Data User" herein) has an ethical obligation to cite it appropriately in any publication that results from its use. The Data User should realize that these data may be actively used by others for ongoing research and that coordination may be necessary to prevent duplicate publication. The Data User is urged to contact the authors of these data if any questions about methodology or results occur. Where appropriate, the Data User is encouraged to consider collaboration or coauthorship with the authors. The Data User should realize that misinterpretation of data may occur if used out of context of the original study. While substantial efforts are made to ensure the accuracy of data and associated documentation, complete accuracy of data sets cannot be guaranteed. All data are made available "as is". The Data User should be aware, however, that data are updated periodically and it is the responsibility of the Data User to check for new versions of the data. The data authors and the repository where these data were obtained shall not be liable for damages resulting from any use or misinterpretation of the data. Thank you.</intellectualRights>
+    <licensed>
+      <licenseName>Creative Commons Zero v1.0 Universal</licenseName>
+      <url>https://spdx.org/licenses/CC0-1.0</url>
+      <identifier>CC0-1.0</identifier>
+    </licensed>
+    <distribution>
+      <online>
+        <url function="information">https://cap.lternet.edu</url>
+      </online>
+    </distribution>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>CAP LTER study area: greater Phoenix, Arizona (USA) metropolitan area and surrounding Sonoran desert region</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-112.79</westBoundingCoordinate>
+          <eastBoundingCoordinate>-111.57</eastBoundingCoordinate>
+          <northBoundingCoordinate>33.979999999999997</northBoundingCoordinate>
+          <southBoundingCoordinate>33.200000000000003</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2023-07-19</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2023-07-19</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+    </coverage>
+    <maintenance>
+      <description>this dataset is complete and or updates are not anticipated</description>
+      <maintenanceUpdateFrequency>notPlanned</maintenanceUpdateFrequency>
+    </maintenance>
+    <contact>
+      <organizationName>Central Arizona–Phoenix LTER</organizationName>
+      <positionName>Information Manager</positionName>
+      <address>
+        <deliveryPoint>Arizona State University</deliveryPoint>
+        <deliveryPoint>Global Institute of Sustainability and Innovation</deliveryPoint>
+        <city>Tempe</city>
+        <administrativeArea>AZ</administrativeArea>
+        <postalCode>85287-5402</postalCode>
+        <country>USA</country>
+      </address>
+      <electronicMailAddress>caplter.data@asu.edu</electronicMailAddress>
+      <onlineUrl>https://sustainability-innovation.asu.edu/caplter/</onlineUrl>
+      <userId directory="https://ror.org/">020zjmd13</userId>
+    </contact>
+    <publisher>
+      <organizationName>Central Arizona–Phoenix LTER</organizationName>
+      <address>
+        <deliveryPoint>Arizona State University</deliveryPoint>
+        <deliveryPoint>Global Institute of Sustainability and Innovation</deliveryPoint>
+        <city>Tempe</city>
+        <administrativeArea>AZ</administrativeArea>
+        <postalCode>85287-5402</postalCode>
+        <country>USA</country>
+      </address>
+    </publisher>
+    <methods>
+      <methodStep>
+        <description>
+          <markdown>
+We used the SOLWEIG model to estimate Mean Radiant Temperature (MRT). SOLWEIG requires three surface models — a Digital Elevation Model (DEM), a Building Surface Model (BSM), and a Canopy Digital Surface Model (CDSM) — along with meteorological forcing data. The surface models were generated from high-resolution LiDAR Point Cloud (LPC) data obtained from the USGS. Meteorological inputs, including air temperature, wind speed, relative humidity, and solar radiation, were sourced from the Phoenix Encanto weather station which is part of the AZMet network.
+
+The DEM was derived from ground points only, while the BSM was generated by masking a full surface model with building footprints from Microsoft.  Non-building areas were filled with DEM values. The CDSM was created by subtracting the DEM from the full surface model for non-building pixels, with building pixels set to zero. All pixels with canopy heights less than or equal to 1.3 m were also set to zero, as they were not considered vegetation canopy. Direct and diffuse shortwave radiation components were estimated within SOLWEIG.
+</markdown>
+        </description>
+      </methodStep>
+    </methods>
+    <project>
+      <title>Central Arizona–Phoenix Long-Term Ecological Research Project</title>
+      <personnel>
+        <individualName>
+          <givenName>Daniel</givenName>
+          <surName>Childers</surName>
+        </individualName>
+        <organizationName>Arizona State University</organizationName>
+        <electronicMailAddress>dan.childers@asu.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">0000-0003-3904-0803</userId>
+        <role>Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Nancy</givenName>
+          <surName>Grimm</surName>
+        </individualName>
+        <organizationName>Arizona State University</organizationName>
+        <electronicMailAddress>nbgrimm@asu.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">0000-0001-9374-660X</userId>
+        <role>Co-principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Sharon</givenName>
+          <givenName>J</givenName>
+          <surName>Hall</surName>
+        </individualName>
+        <organizationName>Arizona State University</organizationName>
+        <electronicMailAddress>sharonjhall@asu.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">0000-0002-8859-6691</userId>
+        <role>Co-principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Billie</givenName>
+          <surName>Turner II</surName>
+        </individualName>
+        <organizationName>Arizona State University</organizationName>
+        <electronicMailAddress>Billie.L.Turner@asu.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">0000-0002-6507-521X</userId>
+        <role>Co-principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Abigail</givenName>
+          <surName>York</surName>
+        </individualName>
+        <organizationName>Arizona State University</organizationName>
+        <electronicMailAddress>Abigail.York@asu.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">0000-0002-2313-9262</userId>
+        <role>Co-principal Investigator</role>
+      </personnel>
+      <abstract>Humankind is increasingly an urban species and urban ecosystems are therefore profoundly important. Cities are concentrated consumers of energy and resources and producers of various wastes, but they are also centers of social networks, innovation, efficiency, and solutions. The Central Arizona?Phoenix Long Term Ecological Research program (CAP V) is a research project that includes scientists from a variety of disciplines focused on understanding cities as hybrid ecosystems including both environmental and human components, and their interactions. Understanding urban ecosystems remains the central focus of CAP V after 25 years of innovative research. The interconnectedness of human motivation, behavior, actions, and outcomes with urban ecosystem structure and function leads to a fundamental question addressed by this project. How have/are human-environment interactions mediated by urban ecological infrastructure to shape past, present, and future ecosystem functions? This project will further indicate how we can use knowledge of these relationships to inform more just, transformative, and sustainable futures. Broader societal impacts are intentionally integrated in CAP V research, with many activities involving explicit partnerships with practitioners and communities that historically have had little voice in the future of their city and environment. This work forms a translational link among social-ecological research outcomes, city institutions, and communities with the goal of ultimately making Phoenix, and cities in general, better and more sustainable places to live.
+
+  CAP research will extend its focus on the theory of Urban Ecological Infrastructure (UEI) as a critical bridge between the system?s biophysical and human/social domains. CAP researchers will continue to explore interdisciplinary urban ecology in residential landscapes, urban waterbodies, desert parks and preserves, while examining the plants, animals, climate, urban design and governance across the metropolitan Phoenix region. New research initiatives will include a focus on environmental justice and equity, as well as urban air quality. The research will develop both knowledge and solutions in underserved and historically neglected communities, including local Indigenous communities. CAP V research is organized around five interdisciplinary areas: 1) ecosystem structure and function and biogeochemical cycling; 2) adaptation and eco-evolutionary dynamics; 3) urban climate, and air quality; 4) urban nature and human perceptions, decisions, and wellbeing; and 5) environmental justice, governance, and transformative futures. Investigating these questions, in the context of the previous 25 years of CAP research, will guide the CAP research endeavor towards more sustainable and resilient futures for U.S. cities and for our increasingly urban society.
+
+  This award is jointly funded by the Division of Environmental Biology and the Division of Behavioral and Cognitive Sciences.
+
+  This award reflects NSF's statutory mission and has been deemed worthy of support through evaluation using the Foundation's intellectual merit and broader impacts review criteria.
+  </abstract>
+      <funding>NSF Awards: CAP I: DEB-9714833, CAP II: DEB-0423704, CAP III: DEB-1026865, CAP IV: DEB-1832016, CAP V: DEB-2224662</funding>
+      <award>
+        <funderName>National Science Foundation</funderName>
+        <funderIdentifier>https://ror.org/021nxhr62</funderIdentifier>
+        <awardNumber>2224662</awardNumber>
+        <title>LTER: CAP V: Investigating how relationships between urban ecological infrastructure and human-environment interactions shape the structure and function of urban ecosystems</title>
+        <awardUrl>https://www.nsf.gov/awardsearch/showAward?AWD_ID=2224662&amp;HistoricalAwards=false</awardUrl>
+      </award>
+    </project>
+    <spatialRaster id="mcp_2023-07-19_0700_central.tif">
+      <entityName>mcp_2023-07-19_0700_central.tif</entityName>
+      <entityDescription>Hourly Mean Radiant Temperature Distribution on a summer day (2024-06-06) Maricopa County, Arizona (USA): central region at 0700</entityDescription>
+      <physical>
+        <objectName>mcp_2023-07-19_0700_central.tif</objectName>
+        <size unit="byte">136641386241</size>
+        <authentication method="MD5">b63c7869466f6c72b7012757d6220ca5</authentication>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>tif</formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url>https://gios-data.s3.us-west-2.amazonaws.com/datasets/cap/mcp_2023-07-19_0700_central.tif</url>
+          </online>
+        </distribution>
+      </physical>
+      <additionalInfo>
+        <section>
+          <title>user-provided coordinate reference system</title>
+          <para>3857</para>
+        </section>
+        <section>
+          <title>raster-derived projection</title>
+          <para>+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs</para>
+        </section>
+      </additionalInfo>
+      <attributeList>
+        <attribute id="b63c7869466f6c72b7012757d6220ca5.raster_value">
+          <attributeName>raster_value</attributeName>
+          <attributeDefinition>Mean Radiant Temperature</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>DEG_C</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <spatialReference>
+        <horizCoordSysName>Sphere_Mercator</horizCoordSysName>
+      </spatialReference>
+      <horizontalAccuracy>
+        <accuracyReport>METADATA_NOT_PROVIDED</accuracyReport>
+      </horizontalAccuracy>
+      <verticalAccuracy>
+        <accuracyReport>METADATA_NOT_PROVIDED</accuracyReport>
+      </verticalAccuracy>
+      <cellSizeXDirection>1</cellSizeXDirection>
+      <cellSizeYDirection>1</cellSizeYDirection>
+      <numberOfBands>1</numberOfBands>
+      <rasterOrigin>Upper Left</rasterOrigin>
+      <rows>88506</rows>
+      <columns>105700</columns>
+      <verticals>1</verticals>
+      <cellGeometry>pixel</cellGeometry>
+    </spatialRaster>
+    <spatialRaster id="mcp_2023-07-19_1500_east.tif">
+      <entityName>mcp_2023-07-19_1500_east.tif</entityName>
+      <entityDescription>Hourly Mean Radiant Temperature Distribution on a summer day (2024-06-06) Maricopa County, Arizona (USA): east region at 1500</entityDescription>
+      <physical>
+        <objectName>mcp_2023-07-19_1500_east.tif</objectName>
+        <size unit="byte">57226313031</size>
+        <authentication method="MD5">9d60868a441805f47854c21f101887ae</authentication>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>tif</formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url>https://gios-data.s3.us-west-2.amazonaws.com/datasets/cap/mcp_2023-07-19_1500_east.tif</url>
+          </online>
+        </distribution>
+      </physical>
+      <additionalInfo>
+        <section>
+          <title>user-provided coordinate reference system</title>
+          <para>3857</para>
+        </section>
+        <section>
+          <title>raster-derived projection</title>
+          <para>+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs</para>
+        </section>
+      </additionalInfo>
+      <attributeList>
+        <attribute id="9d60868a441805f47854c21f101887ae.raster_value">
+          <attributeName>raster_value</attributeName>
+          <attributeDefinition>Mean Radiant Temperature</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>DEG_C</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <spatialReference>
+        <horizCoordSysName>Sphere_Mercator</horizCoordSysName>
+      </spatialReference>
+      <horizontalAccuracy>
+        <accuracyReport>METADATA_NOT_PROVIDED</accuracyReport>
+      </horizontalAccuracy>
+      <verticalAccuracy>
+        <accuracyReport>METADATA_NOT_PROVIDED</accuracyReport>
+      </verticalAccuracy>
+      <cellSizeXDirection>1</cellSizeXDirection>
+      <cellSizeYDirection>1</cellSizeYDirection>
+      <numberOfBands>1</numberOfBands>
+      <rasterOrigin>Upper Left</rasterOrigin>
+      <rows>60100</rows>
+      <columns>45700</columns>
+      <verticals>1</verticals>
+      <cellGeometry>pixel</cellGeometry>
+    </spatialRaster>
+  </dataset>
+  <annotations>
+    <annotation references="b63c7869466f6c72b7012757d6220ca5.raster_value">
+      <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
+      <valueURI label="degree Celsius">http://qudt.org/vocab/unit/DEG_C</valueURI>
+    </annotation>
+    <annotation references="9d60868a441805f47854c21f101887ae.raster_value">
+      <propertyURI label="has unit">http://qudt.org/schema/qudt/hasUnit</propertyURI>
+      <valueURI label="degree Celsius">http://qudt.org/vocab/unit/DEG_C</valueURI>
+    </annotation>
+  </annotations>
+  <additionalMetadata>
+    <metadata>
+      <unitList>
+        <unit id="DEG_C">
+          <description>degree Celsius</description>
+        </unit>
+      </unitList>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>

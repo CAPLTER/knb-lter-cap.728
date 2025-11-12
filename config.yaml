@@ -1,0 +1,7 @@
+scope: knb-lter-cap
+identifier: 728
+baseURL: https://gios-data.s3.us-west-2.amazonaws.com/datasets/cap/
+project: lter
+title: Hourly Mean Radiant Temperature Distribution on a summer day (2023-07-19) Maricopa County, Arizona (USA)
+maintenance: none
+geographic_description: 'CAP LTER study area: greater Phoenix, Arizona (USA) metropolitan area and surrounding Sonoran desert region'
