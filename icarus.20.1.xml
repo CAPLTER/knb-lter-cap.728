@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd"
+         packageId="icarus.20.1" 
+         system="https://tools.ecoinformatics.org/eml/eml-2.2.0">
+    <dataset>
+        <title>Old-Growth Forest Bird Point Count Survey Data: Central Ridge Plot (2025)</title>
+        <creator>
+            <individualName>
+                <givenName>Avery</givenName>
+                <surName>Chen</surName>
+            </individualName>
+            <organizationName>Mountain Ecology Research Institute</organizationName>
+            <electronicMailAddress>avery.chen@meri.edu</electronicMailAddress>
+            <userId directory="https://orcid.org">0000-0001-5789-1234</userId>
+        </creator>
+        <pubDate>2025</pubDate>
+        <abstract>
+            <para>This dataset contains observations from a one-time point count bird survey conducted on June 15, 2025, within a 100-hectare plot of old-growth temperate rainforest in the Central Ridge area. The purpose was to establish a baseline inventory of avian species richness and abundance for future monitoring programs. A total of 12 circular plots were sampled for 5 minutes each. This data table contains 120 records (10 records per plot) which are observation events of individual or flocks of birds.</para>
+        </abstract>
+        <keywordSet>
+            <keyword>ornithology</keyword>
+            <keyword>point count</keyword>
+            <keyword>forest ecology</keyword>
+            <keyword>biodiversity</keyword>
+            <keyword>old growth</keyword>
+            <keywordThesaurus>LTER Controlled Vocabulary</keywordThesaurus>
+        </keywordSet>
+        <coverage>
+            <geographicCoverage>
+                <geographicDescription>Central Ridge Plot, bordering the North Fork River. Mixed conifer and broadleaf old-growth forest.</geographicDescription>
+                <boundingCoordinates>
+                    <westBoundingCoordinate>-121.50</westBoundingCoordinate>
+                    <eastBoundingCoordinate>-121.45</eastBoundingCoordinate>
+                    <northBoundingCoordinate>48.10</northBoundingCoordinate>
+                    <southBoundingCoordinate>48.05</southBoundingCoordinate>
+                </boundingCoordinates>
+            </geographicCoverage>
+            <temporalCoverage>
+                <singleDateTime>
+                    <calendarDate>2025-06-15</calendarDate>
+                </singleDateTime>
+            </temporalCoverage>
+        </coverage>
+        <contact>
+            <individualName>
+                <givenName>Avery</givenName>
+                <surName>Chen</surName>
+            </individualName>
+            <organizationName>Mountain Ecology Research Institute</organizationName>
+            <electronicMailAddress>avery.chen@meri.edu</electronicMailAddress>
+            <userId directory="https://orcid.org">0000-0001-5789-1234</userId>
+        </contact>
+        <dataTable id="ForestBirdSurvey_2025">
+            <entityName>Bird_Survey_Point_Counts_2025</entityName>
+            <entityDescription>Point count observations of birds</entityDescription>
+            <physical>
+                <objectName>ForestBirdSurvey_2025.csv</objectName>
+                <size unit="bytes">2054</size>
+                <authentication method="MD5">adb9281f57bf0e29fe604d3cfe745ef7</authentication>
+                <dataFormat>
+                    <textFormat>
+                        <numHeaderLines>1</numHeaderLines>
+                        <recordDelimiter>\n</recordDelimiter>
+                        <attributeOrientation>column</attributeOrientation>
+                        <simpleDelimited>
+                            <fieldDelimiter>,</fieldDelimiter>
+                        </simpleDelimited>
+                    </textFormat>
+                </dataFormat>
+                <distribution>
+                    <offline>
+                        <mediumName>harddrive</mediumName>
+                    </offline>
+                </distribution>
+            </physical>
+            <attributeList>
+                <attribute id="PlotID">
+                    <attributeName>PlotID</attributeName>
+                    <attributeLabel>Point Count Plot Identifier</attributeLabel>
+                    <attributeDefinition>Unique identifier for the 12 circular survey plots (P01-P12).</attributeDefinition>
+                    <measurementScale>
+                        <nominal>
+                            <nonNumericDomain>
+                                <textDomain>
+                                    <definition>e.g., P01, P02, P12</definition>
+                                    <pattern>P\d{2}</pattern>
+                                </textDomain>
+                            </nonNumericDomain>
+                        </nominal>
+                    </measurementScale>
+                </attribute>
+                <attribute id="ObservationTime_s">
+                    <attributeName>ObservationTime_s</attributeName>
+                    <attributeLabel>Time into Count (seconds)</attributeLabel>
+                    <attributeDefinition>Time in seconds since the start of the 5-minute (300s) count period when the bird was first observed.</attributeDefinition>
+                    <measurementScale>
+                        <interval>
+                            <unit>
+                                <standardUnit>second</standardUnit>
+                            </unit>
+                            <numericDomain>
+                                <numberType>integer</numberType>
+                                <bounds>
+                                    <minimum exclusive="false">0</minimum>
+                                    <maximum exclusive="false">300</maximum>
+                                </bounds>
+                            </numericDomain>
+                        </interval>
+                    </measurementScale>
+                </attribute>
+                <attribute id="SpeciesCode">
+                    <attributeName>SpeciesCode</attributeName>
+                    <attributeLabel>Four-Letter Bird Species Code</attributeLabel>
+                    <attributeDefinition>Standard four-letter alpha code for the observed bird species (e.g., MODO for Mourning Dove).</attributeDefinition>
+                    <measurementScale>
+                        <nominal>
+                            <nonNumericDomain>
+                                <textDomain>
+                                    <definition>Standard 4-letter codes</definition>
+                                </textDomain>
+                            </nonNumericDomain>
+                        </nominal>
+                    </measurementScale>
+                </attribute>
+                <attribute id="Abundance">
+                    <attributeName>Abundance</attributeName>
+                    <attributeLabel>Count of Individuals</attributeLabel>
+                    <attributeDefinition>The number of individual birds of this species observed in this event (usually 1 for single birds or >1 for a flock).</attributeDefinition>
+                    <measurementScale>
+                        <ratio>
+                            <unit>
+                                <standardUnit>number</standardUnit>
+                            </unit>
+                            <numericDomain>
+                                <numberType>integer</numberType>
+                                <bounds>
+                                    <minimum exclusive="false">1</minimum>
+                                </bounds>
+                            </numericDomain>
+                        </ratio>
+                    </measurementScale>
+                </attribute>
+                <attribute id="DetectionMethod">
+                    <attributeName>DetectionMethod</attributeName>
+                    <attributeLabel>Method of Detection</attributeLabel>
+                    <attributeDefinition>The way the bird was detected (V = Visual, A = Auditory).</attributeDefinition>
+                    <measurementScale>
+                        <nominal>
+                            <nonNumericDomain>
+                                <enumeratedDomain>
+                                    <codeDefinition>
+                                        <code>V</code>
+                                        <definition>Visual observation</definition>
+                                    </codeDefinition>
+                                    <codeDefinition>
+                                        <code>A</code>
+                                        <definition>Auditory (song or call) observation</definition>
+                                    </codeDefinition>
+                                </enumeratedDomain>
+                            </nonNumericDomain>
+                        </nominal>
+                    </measurementScale>
+                </attribute>
+            </attributeList>
+            <numberOfRecords>120</numberOfRecords>
+        </dataTable>
+    </dataset>
+</eml:eml>
