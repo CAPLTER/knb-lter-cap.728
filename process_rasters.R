@@ -1,7 +1,9 @@
+# install.packages("rdflib", repos = "http://cran.r-project.org")
+# install.packages("EDIutils", repos = "http://cran.r-project.org")
 
-devtools::load_all("/scratch/srearl/capeml/")
-devtools::load_all("/scratch/srearl/capemlGIS/")
-source("/home/srearl/aws.s3")
+# devtools::load_all("/scratch/srearl/capeml/")
+# devtools::load_all("/scratch/srearl/capemlGIS/")
+# source("/home/srearl/aws.s3")
 
 sub_path <- "/scratch/srearl/Maricopa_MRT_2023"
 
@@ -35,10 +37,10 @@ process_raster <- function(filename) {
 
   EML::write_eml(
     eml  = get(paste0(region, "_", hour, "_SR")),
-    file = paste0("/scratch/srearl/sr_2023", region, "_", hour, ".xml")
+    file = paste0("/scratch/srearl/sr_2023/", region, "_", hour, ".xml")
   )
 
-  capeml::data_to_amz(filename)
+  # capeml::data_to_amz(filename)
 
 }
 
